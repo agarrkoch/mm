@@ -113,6 +113,13 @@ elif [[ "${OUTPUT_TYPE}" == "youtube" ]] ; then
     EXTENSION="mp4"
     RELATIVEPATH="objects/access/youtube_up"
     USEACCESSTIMES="Y"
+    if [[ "${TCBURN}" = "Y" ]]; then
+        SUFFIX="_tcburn"
+    elif [[ "${SUBTITLE_FILE}" = "Y" ]]; then
+        SUFFIX="_subburn"
+    elif [[ "${PTSBURN}" = "Y" ]]; then
+        SUFFIX="_ptsburn"
+    fi
 elif [[ "${OUTPUT_TYPE}" == "resourcespace" ]] ; then
     PREFERRED_SOURCE="service"
     EXTENSION="mp4"
